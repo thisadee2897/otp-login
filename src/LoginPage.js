@@ -1,14 +1,33 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
+
 
 const LoginPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleLogin = () => {
-        if (username === 'admin' && password === 'password') {
+
+    const handleLogin = async () => {
+        const response = await fetch('http://localhost:3000/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                username,
+                password,
+            }),
+        });
+
+        if (response.ok) {
+            // ถ้าล็อกอินสำเร็จ
+            const responseData = await response.json();
+            const accessToken = responseData.accessToken;
             alert('Login Successful');
+            console.log('Login Successful');
         } else {
             alert('Invalid Credentials');
+            console.log('Invalid Credentials');
         }
     };
 
