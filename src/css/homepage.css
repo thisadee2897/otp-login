@@ -1,37 +1,51 @@
 /* homepage.css */
 
 .excel-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  .excel-table th,
-  .excel-table td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
-  }
-  
-  .excel-table th {
-    background-color: #0e76bd;
-    color: #fff;
-  }
-  
-  .excel-table tbody tr:nth-child(even) {
-    background-color: #f5faff;
-  }
-  
-  .excel-table tbody tr:hover {
-    background-color: #d1eaff;
-  }
-  
-  .excel-table td:first-child {
-    width: 40px; /* กำหนดความกว้างของคอลัมน์ ID */
-    text-align: center;
-  }
-  
-  .excel-table td:last-child {
-    width: calc(100% - 40px); /* กำหนดความกว้างของคอลัมน์ Name */
-  }
-  
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.excel-table th,
+.excel-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.excel-table th {
+  background-color: #0e76bd;
+  color: #fff;
+}
+
+.excel-table tbody tr:nth-child(even) {
+  background-color: #f5faff;
+}
+
+.excel-table tbody tr:hover {
+  background-color: #d1eaff;
+}
+
+.excel-table td:first-child {
+  width: 40px;
+  text-align: center;
+}
+.excel-table td:last-child {
+  width: 60px;
+  text-align: center;
+}
+
+.delete-button {
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  width: 60px;
+  text-align: center;
+}
+
+.excel-table td:last-child {
+  width: calc(100%-20%);
+  /* กำหนดความกว้างของคอลัมน์ Name */
+}
