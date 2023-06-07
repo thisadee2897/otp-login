@@ -63,3 +63,27 @@
 body {
   overflow: hidden;
 }
+/* .excel-table thead {
+  display: block;
+  position: sticky;
+  top: 0;
+  background-color: #f9f9f9;
+  z-index: 1;
+}
+
+.excel-table thead th {
+  height: 50px;
+  line-height: 50px;
+}
+
+.excel-table tbody {
+  display: block;
+  max-height: 500px;
+  overflow-y: auto;
+} */
+.excel-table thead {
+  position: sticky;
+  top: 0;
+  background-color: #f9f9f9;
+  z-index: 1;
+}
