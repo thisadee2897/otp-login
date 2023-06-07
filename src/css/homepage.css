@@ -1,7 +1,7 @@
 .homepage {
   display: grid;
-  grid-template-columns: 0.3fr 1fr;
-  grid-gap: 20px;
+  grid-template-columns: 0.4fr 1fr;
+  grid-gap: 10px;
 }
 
 .add-form-container {
@@ -14,8 +14,9 @@
 }
 
 .table-container {
-  max-height: auto; /* กำหนดความสูงสูงสุดของตาราง */
+  max-height: 100vh; /* กำหนดความสูงสูงสุดของตาราง */
   overflow-y: auto; /* เพิ่มแถบเลื่อนในกรณีที่เนื้อหามีความสูงเกิน */
+  overflow: scroll;
 }
 
 .excel-table {
@@ -58,4 +59,7 @@
 
 .export-button:hover {
   background-color: #45a049;
+}
+body {
+  overflow: hidden;
 }
