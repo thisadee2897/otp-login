@@ -5,6 +5,8 @@ import reportWebVitals from './reportWebVitals';
 // import HomePage from './page/homepage';
 // import AddForm from './page/AddForm';
 import HomePage from './page/homepage';
+// import App from './App';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
