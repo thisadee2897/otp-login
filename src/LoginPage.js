@@ -1,11 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
+import OTPVerificationPage from './otpp';
+import './App.css';
 
 
 const LoginPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-
+    const [loggedIn, setLoggedIn] = useState(false); // เพิ่ม state loggedIn เพื่อตรวจสอบสถานะการล็อกอิน
 
     const handleLogin = async () => {
         const response = await fetch('http://localhost:3000/login', {
@@ -20,129 +22,45 @@ const LoginPage = () => {
         });
 
         if (response.ok) {
-            // ถ้าล็อกอินสำเร็จ
             const responseData = await response.json();
             const accessToken = responseData.accessToken;
             alert('Login Successful');
             console.log('Login Successful');
+            setLoggedIn(true); // เมื่อล็อกอินสำเร็จให้กำหนดค่า loggedIn เป็น true
         } else {
             alert('Invalid Credentials');
             console.log('Invalid Credentials');
         }
     };
 
-    return (
-        <div style={styles.container}>
-            <div style={styles.snowContainer}>
+    if (loggedIn) {
+        return <OTPVerificationPage />;
+    }
 
-            </div>
-            <div style={styles.card}>
-                <h2 style={styles.heading}>Login</h2>
+    return (
+        <div className="container">
+            <div className="card">
+                <h2 className="heading">Login</h2>
                 <input
-                    style={styles.input}
+                    className="input"
                     type="text"
                     placeholder="Username"
                     value={username}
                     onChange={e => setUsername(e.target.value)}
                 />
                 <input
-                    style={styles.input}
+                    className="input"
                     type="password"
                     placeholder="Password"
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                 />
-                <button style={styles.button} onClick={handleLogin}>
+                <button className="button" onClick={handleLogin}>
                     Login
                 </button>
             </div>
         </div>
     );
-};
-
-
-const styles = {
-    container: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-        backgroundColor: '#D1E9FF',
-    },
-    snowContainer: {
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        pointerEvents: 'none',
-    },
-    card: {
-        backgroundColor: '#FFFFFF',
-        borderRadius: 8,
-        padding: 16,
-        width: 300,
-        boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
-    },
-    heading: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        marginBottom: 16,
-        color: '#374151',
-    },
-    input: {
-        width: '100%',
-        height: 40,
-        marginBottom: 12,
-        padding: 8,
-        borderRadius: 4,
-        border: '1px solid #E5E7EB',
-        fontSize: 16,
-    },
-    button: {
-        width: '100%',
-        backgroundColor: '#3B82F6',
-        color: '#FFFFFF',
-        padding: 8,
-        borderRadius: 4,
-        fontSize: 16,
-        fontWeight: 'bold',
-        cursor: 'pointer',
-    },
-    // เพิ่มส่วน CSS ที่คุณต้องการเพิ่มเติม
-    '.App': {
-        textAlign: 'center',
-    },
-    '.App-logo': {
-        height: '40vmin',
-        pointerEvents: 'none',
-    },
-    '@media (prefers-reduced-motion: no-preference)': {
-        '.App-logo': {
-            animation: 'App-logo-spin infinite 20s linear',
-        },
-    },
-    '.App-header': {
-        backgroundColor: '#282c34',
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontSize: 'calc(10px + 2vmin)',
-        color: 'white',
-    },
-    '.App-link': {
-        color: '#61dafb',
-    },
-    '@keyframes App-logo-spin': {
-        from: {
-            transform: 'rotate(0deg)',
-        },
-        to: {
-            transform: 'rotate(360deg)',
-        },
-    },
 };
 
 export default LoginPage;
