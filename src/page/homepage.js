@@ -17,15 +17,17 @@ const HomePage = () => {
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, 'Sales');
         XLSX.writeFile(workbook, 'sales.xlsx');
-    };
+      };
 
     return (
         <div className="homepage">
             <div className="add-form-container">
                 <AddForm sale={sale} setsale={setsale} />
-                <button onClick={exportToExcel}>Export to Excel</button>
             </div>
             <div className="table-container">
+                <button className="export-button" onClick={exportToExcel}>
+                    Export to Excel
+                </button>
                 <table className="excel-table">
                     <thead>
                         <tr>
