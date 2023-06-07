@@ -1,77 +1,37 @@
-.homepage {
-    background-color: #eaf2f8;
-    /* สีฟ้าอ่อนๆ */
-    padding: 20px;
-    /* ระยะห่างของเนื้อหาภายในโฮมเพจ */
+/* homepage.css */
+
+.excel-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .excel-table th,
+  .excel-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .excel-table th {
+    background-color: #0e76bd;
+    color: #fff;
+  }
+  
+  .excel-table tbody tr:nth-child(even) {
+    background-color: #f5faff;
+  }
+  
+  .excel-table tbody tr:hover {
+    background-color: #d1eaff;
+  }
+  
+  .excel-table td:first-child {
+    width: 40px; /* กำหนดความกว้างของคอลัมน์ ID */
     text-align: center;
-    /* จัดเนื้อหาให้อยู่ตรงกลาง */
-}
-
-/* เพิ่ม CSS สำหรับการแยกแต่ละขนาดหน้าจอ */
-/* ตัวอย่างเท่านั้น - คุณอาจต้องปรับแต่งให้เหมาะสมกับโปรเจ็กต์ของคุณ */
-
-/* CSS สำหรับหน้าจอคอมพิวเตอร์ */
-@media screen and (min-width: 1024px) {
-    .homepage {
-        max-width: 960px;
-        /* กำหนดความกว้างสูงสุดสำหรับหน้าจอคอมพิวเตอร์ */
-        margin: 0 auto;
-        /* จัดให้เนื้อหาอยู่ตรงกลางของหน้าจอ */
-    }
-}
-
-/* CSS สำหรับหน้าจอแท็บเล็ต */
-@media screen and (max-width: 1023px) {
-    .homepage {
-        font-size: 18px;
-        /* เพิ่มขนาดตัวอักษรสำหรับแท็บเล็ต */
-    }
-}
-
-/* CSS สำหรับหน้าจอโทรศัพท์ */
-@media screen and (max-width: 767px) {
-    .homepage {
-        font-size: 16px;
-        /* เพิ่มขนาดตัวอักษรสำหรับโทรศัพท์ */
-        padding: 10px;
-        /* ลดระยะห่างของเนื้อหาภายในโฮมเพจสำหรับโทรศัพท์ */
-    }
-}
-
-.navigation-bar {
-    background-color: #eaf2f8;
-    /* สีพื้นหลังของบาร์ */
-    padding: 10px 20px;
-    /* ระยะห่างของเนื้อหาภายในบาร์ */
-}
-
-.navigation-bar ul {
-    list-style-type: none;
-    /* ลบสัญลักษณ์ของรายการ */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-.navigation-bar li {
-    margin: 0 10px;
-}
-
-.navigation-bar a {
-    color: #333333;
-    /* สีข้อความในบาร์ */
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.navigation-bar a:hover {
-    color: #0066cc;
-    /* สีข้อความเมื่อเม้าส์ชี้ไปที่ลิงก์ */
-}
-
-/* การเน้นหัวข้อปัจจุบัน */
-.navigation-bar .active {
-    color: #0066cc;
-    /* สีข้อความหัวข้อปัจจุบัน */
-}
+  }
+  
+  .excel-table td:last-child {
+    width: calc(100% - 40px); /* กำหนดความกว้างของคอลัมน์ Name */
+  }
+  
