@@ -3,7 +3,7 @@ import '../css/homepage.css';
 import AddForm from './AddForm';
 
 const HomePage = () => {
-    const [userAccounts, setUserAccounts] = useState([
+    const [sale, setsale] = useState([
         { id: 1, name: 'John Doe' },
         { id: 2, name: 'Jane Smith' },
         { id: 3, name: 'Bob Johnson' },
@@ -15,17 +15,16 @@ const HomePage = () => {
         { id: 9, name: 'Bob Johnson' },
         { id: 10, name: 'John Doe' },
         { id: 11, name: 'Jane Smith' },
-        { id: 11, name: 'Bob Johnson' },
     ]);
 
     // ฟังก์ชันสำหรับลบรายการ
     const deleteAccount = (id) => {
-        setUserAccounts(userAccounts.filter((account) => account.id !== id));
+        setsale(sale.filter((account) => account.id !== id));
     };
 
     return (
         <div className="homepage">
-            <AddForm />
+            <AddForm sale={sale} setsale={setsale} />
             <table className="excel-table">
                 <thead>
                     <tr>
@@ -35,7 +34,7 @@ const HomePage = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {userAccounts.map((account) => (
+                    {sale.map((account) => (
                         <tr key={account.id}>
                             <td>{account.id}</td>
                             <td>{account.name}</td>

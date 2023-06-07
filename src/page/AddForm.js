@@ -1,18 +1,20 @@
 
 import { useState } from "react";
 import "../css/AddForm.css";
-export default function AddForm() {
+export default function AddForm({ sale, setsale }) {
+    // const {sale,setsale} =props;
     const [name, setName] = useState("");
     function saveSale(e) {
         e.preventDefault();
         if (!name) {
-            alert("กรุณาป้อนข้อมูลด้วยครับ")
+            alert("กรุณาป้อนข้อมูลด้วยครับ");
+            return;
         } else {
             const newSale = {
                 id: Math.floor(Math.random() * 10000),
                 name: name
             }
-            console.log(newSale);
+            setsale([...sale, newSale]);
             setName("");
         }
 
@@ -25,4 +27,4 @@ export default function AddForm() {
         </form>
     </section>
 
-}
+};
