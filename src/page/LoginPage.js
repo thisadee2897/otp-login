@@ -1,13 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import OTPVerificationPage from './otpp';
-import './App.css';
+import './css/App.css';
 
 
 const LoginPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [loggedIn, setLoggedIn] = useState(false); // เพิ่ม state loggedIn เพื่อตรวจสอบสถานะการล็อกอิน
+    const [loggedIn, setLoggedIn] = useState(false);
 
     const handleLogin = async () => {
         const response = await fetch('http://localhost:3000/login', {
