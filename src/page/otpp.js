@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
+import '../css/OTP.css';
+import HomePage from './homepage';
 
 const OTPVerificationPage = () => {
+    const [phoneNumber, setPhoneNumber] = useState('');
     const [otp, setOTP] = useState('');
+    const [loggedIn, setLoggedIn] = useState(false);
+
+    const handlePhoneNumberChange = (e) => {
+        const { value } = e.target;
+        setPhoneNumber(value);
+    };
 
     const handleOTPChange = (e) => {
         const { value } = e.target;
@@ -11,50 +20,43 @@ const OTPVerificationPage = () => {
     const handleOTPSubmit = (e) => {
         e.preventDefault();
         // ตรวจสอบ OTP ที่ผู้ใช้ป้อน
+        if (otp === '123456') {
+            setLoggedIn(true);
+        } else {
+            alert('Invalid OTP');
+        }
     };
 
+    if (loggedIn) {
+        return <HomePage />;
+    }
+
     return (
-        <div style={styles.container}>
-            <h2>OTP Verification</h2>
+        <div className="otp-container">
+            <h2 className="otp-heading">OTP Verification</h2>
             <form onSubmit={handleOTPSubmit}>
+                <input
+                    type="text"
+                    maxLength={10}
+                    value={phoneNumber}
+                    onChange={handlePhoneNumberChange}
+                    className="otp-input"
+                    placeholder="Enter Phone Number"
+                />
                 <input
                     type="text"
                     maxLength={6}
                     value={otp}
                     onChange={handleOTPChange}
-                    style={styles.input}
+                    className="otp-input"
                     placeholder="Enter OTP"
                 />
-                <button type="submit" style={styles.button}>
+                <button type="submit" className="otp-button">
                     Verify
                 </button>
             </form>
         </div>
     );
-};
-
-const styles = {
-    container: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100vh',
-    },
-    input: {
-        marginBottom: '10px',
-        padding: '10px',
-        width: '200px',
-        textAlign: 'center',
-    },
-    button: {
-        padding: '10px 20px',
-        backgroundColor: '#4CAF50',
-        color: 'white',
-        border: 'none',
-        borderRadius: '4px',
-        cursor: 'pointer',
-    },
 };
 
 export default OTPVerificationPage;

@@ -17,7 +17,7 @@ const HomePage = () => {
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, 'Sales');
         XLSX.writeFile(workbook, 'sales.xlsx');
-      };
+    };
 
     return (
         <div className="homepage">

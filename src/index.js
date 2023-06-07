@@ -2,16 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './css/homepage.css';
 import reportWebVitals from './reportWebVitals';
-// import HomePage from './page/homepage';
 // import AddForm from './page/AddForm';
-import HomePage from './page/homepage';
+// import HomePage from './page/homepage';
 // import App from './App';
+// import Login from './page/LoginPage';
+import OTP from './page/otpp'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <HomePage />
+    <OTP />
   </React.StrictMode>
 );
 reportWebVitals();

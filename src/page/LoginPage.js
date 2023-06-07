@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import OTPVerificationPage from './otpp';
-import './css/App.css';
+import OTPVerificationPage from './homepage';
+import '../css/Login.css';
 
 
 const LoginPage = () => {
@@ -10,7 +10,7 @@ const LoginPage = () => {
     const [loggedIn, setLoggedIn] = useState(false);
 
     const handleLogin = async () => {
-        const response = await fetch('http://localhost:3000/login', {
+        const response = await fetch('http://localhost:5435/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -60,6 +60,7 @@ const LoginPage = () => {
                 </button>
             </div>
         </div>
+
     );
 };
 
