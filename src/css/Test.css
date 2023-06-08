@@ -1,0 +1,34 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.container {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.button {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #333333;
+}
+
+.link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #aaaaaa;
+    text-decoration: underline;
+}

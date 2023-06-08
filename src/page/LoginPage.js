@@ -5,12 +5,13 @@ import '../css/Login.css';
 
 
 const LoginPage = () => {
+    console.log(useState);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [loggedIn, setLoggedIn] = useState(false);
 
     const handleLogin = async () => {
-        const response = await fetch('http://localhost:5435/login', {
+        const response = await fetch('http://localhost:3000/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -26,7 +27,7 @@ const LoginPage = () => {
             const accessToken = responseData.accessToken;
             alert('Login Successful');
             console.log('Login Successful');
-            setLoggedIn(true); // เมื่อล็อกอินสำเร็จให้กำหนดค่า loggedIn เป็น true
+            setLoggedIn(true);
         } else {
             alert('Invalid Credentials');
             console.log('Invalid Credentials');

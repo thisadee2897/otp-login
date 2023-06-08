@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '../css/OTP.css';
 import HomePage from './homepage';
-
 const OTPVerificationPage = () => {
-    const [phoneNumber, setPhoneNumber] = useState('');
+    const [phoneno, setphoneno] = useState('0889594528');
     const [otp, setOTP] = useState('');
     const [otpSent, setOTPSent] = useState(false);
     const [loggedIn, setLoggedIn] = useState(false);
 
-    const handlePhoneNumberChange = (e) => {
+    const handlephonenoChange = (e) => {
+        console.log("User added value");
         const { value } = e.target;
-        setPhoneNumber(value);
+        setphoneno(value);
     };
 
     const handleOTPChange = (e) => {
@@ -22,8 +22,8 @@ const OTPVerificationPage = () => {
     const handleSendOTP = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('/api/sendotp', {
-                phoneno: phoneNumber,
+            const response = await axios.post('/sendotp', {
+                phoneno: phoneno,
             });
             if (response.status === 200 && response.data.RespCode === 200) {
                 setOTPSent(true);
@@ -39,8 +39,8 @@ const OTPVerificationPage = () => {
     const handleOTPSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('/api/verifyotp', {
-                phoneno: phoneNumber,
+            const response = await axios.post('/verifyotp', {
+                phoneno: phoneno,
                 otp,
             });
             if (response.status === 200 && response.data.RespCode === 200) {
@@ -55,7 +55,7 @@ const OTPVerificationPage = () => {
     };
 
     if (loggedIn) {
-        return <HomePage />;
+        return React.createElement(HomePage, null);
     }
 
     return (
@@ -66,8 +66,8 @@ const OTPVerificationPage = () => {
                     <input
                         type="text"
                         maxLength={10}
-                        value={phoneNumber}
-                        onChange={handlePhoneNumberChange}
+                        value={phoneno}
+                        onChange={handlephonenoChange}
                         className="otp-input"
                         placeholder="ใส่หมายเลขโทรศัพท์"
                     />
