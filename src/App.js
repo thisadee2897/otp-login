@@ -6,6 +6,7 @@ import Customer from './page/Customer';
 import Sale from './page/Sale';
 import Car from './page/Car';
 import Finance from './page/Finance';
+import NotFound from './componemts/Notfound';
 function App() {
     return (
         <BrowserRouter>
@@ -16,6 +17,7 @@ function App() {
                 <Route path='sales' element={<Sale />}></Route>
                 <Route path='/cars' element={<Car />}></Route>
                 <Route path='/finances' element={<Finance />}></Route>
+                <Route path='*' element={<NotFound />}></Route>
             </Routes>
         </BrowserRouter>
     )
