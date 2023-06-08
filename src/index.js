@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './css/homepage.css';
+import './css/index.css';
 import reportWebVitals from './reportWebVitals';
 // import AddForm from './page/AddForm';
 // import HomePage from './page/homepage';
