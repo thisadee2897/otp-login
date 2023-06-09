@@ -10,6 +10,7 @@ import Finance from './page/Finance';
 import NotFound from './componemts/Notfound';
 import Login from './page/Login';
 import { AuthProvider } from './componemts/AuthContext';
+import OTPForm from './componemts/OTP';
 
 function App() {
     return (
@@ -17,7 +18,7 @@ function App() {
             <AuthProvider>
                 <Navbar />
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/" element={<OTPForm />} />
                     <Route path="/customers" element={<Customer />} />
                     <Route path="/sales" element={<Sale />} />
                     <Route path="/cars" element={<Car />} />
