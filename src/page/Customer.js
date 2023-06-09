@@ -64,23 +64,25 @@ const HomePage = () => {
                 <table className="excel-table">
                     <thead>
                         <tr>
-                            <th>Date</th>
-                            <th>Name</th>
+                            <th>วันที่</th>
+                            <th>ชื่อลูกค้า</th>
                             <th>Facebook</th>
-                            <th>Phone Number</th>
-                            <th>Status</th>
-                            <th>Action</th>
+                            <th>ที่อยู่</th>
+                            <th>เบอร์โทร</th>
+                            <th>สถานะ</th>
+                            <th>เพิ่มเติม</th>
                         </tr>
                     </thead>
                     <tbody>
                         {sale.map((account) => (
                             <tr key={account.id}>
-                                <td>{account.date}</td>
-                                <td>{account.name}</td>
-                                <td>{account.facebook}</td>
-                                <td>{account.phonenumber}</td>
-                                <td>{account.status}</td>
-                                <td>
+                                <td style={{ minwidth: '20px'}}>{account.date}</td>
+                                <td style={{ minwidth: '100px'}}>{account.name}</td>
+                                <td style={{ minwidth: '150px'}}>{account.facebook}</td>
+                                <td style={{ minwidth: '150px'}}>{account.phonenumber}</td>
+                                <td style={{ minwidth: '150px'}}>{account.phonenumber}</td>
+                                <td style={{ minwidth: '150px'}}>{account.status}</td>
+                                <td style={{ minwidth: '70px', textAlign: 'center'}}>
                                     <button className="delete-button" onClick={() => deleteAccount(account.id)}>
                                         Delete
                                     </button>

@@ -1,3 +1,4 @@
+import React from 'react';
 import './css/App.css';
 import Navbar from './componemts/navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -7,21 +8,26 @@ import Sale from './page/Sale';
 import Car from './page/Car';
 import Finance from './page/Finance';
 import NotFound from './componemts/Notfound';
+import Login from './page/Login';
+import { AuthProvider } from './componemts/AuthContext';
+
 function App() {
     return (
         <BrowserRouter>
-            <Navbar />
-            <Routes>
-                <Route path='/' element={<Home />}></Route>
-                <Route path='/customers' element={<Customer />}></Route>
-                <Route path='sales' element={<Sale />}></Route>
-                <Route path='/cars' element={<Car />}></Route>
-                <Route path='/finances' element={<Finance />}></Route>
-                <Route path='*' element={<NotFound />}></Route>
-            </Routes>
+            <AuthProvider>
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/customers" element={<Customer />} />
+                    <Route path="/sales" element={<Sale />} />
+                    <Route path="/cars" element={<Car />} />
+                    <Route path="/finances" element={<Finance />} />
+                    <Route path="*" element={<NotFound />} />
+                    <Route path="/login" element={<Login />} />
+                </Routes>
+            </AuthProvider>
         </BrowserRouter>
-    )
-
+    );
 }
 
 export default App;
