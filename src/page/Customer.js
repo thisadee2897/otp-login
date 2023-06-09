@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import '../css/homepage.css';
 import AddForm from './AddForm';
 import * as XLSX from 'xlsx'; // แก้ไขที่นี่
+// import SalesReport from '../componemts/SalesReport';
+// import { saveAs } from 'file-saver';
+// import { renderToStream } from '@react-pdf/renderer';
 
 const HomePage = () => {
     const [sale, setsale] = useState([
@@ -51,6 +54,19 @@ const HomePage = () => {
         XLSX.utils.book_append_sheet(workbook, worksheet, 'Sales');
         XLSX.writeFile(workbook, 'sales.xlsx');
     };
+    // const exportToPDF = (sale) => {
+    //     const stream = renderToStream(<SalesReport sale={sale} />);
+    //     const chunks = [];
+
+    //     stream.on('data', (chunk) => {
+    //         chunks.push(chunk);
+    //     });
+
+    //     stream.on('end', () => {
+    //         const pdfBlob = new Blob(chunks, { type: 'application/pdf' });
+    //         saveAs(pdfBlob, 'sales.pdf');
+    //     });
+    // };
 
     return (
         <div className="homepage">
@@ -59,6 +75,9 @@ const HomePage = () => {
                 <button className="export-button" onClick={exportToExcel}>
                     Export to Excel
                 </button>
+                {/* <button className="export-button" onClick={exportToPDF}>
+                    Export to PDF
+                </button> */}
             </div>
             <div className="table-container">
                 <table className="excel-table">
@@ -76,13 +95,13 @@ const HomePage = () => {
                     <tbody>
                         {sale.map((account) => (
                             <tr key={account.id}>
-                                <td style={{ minwidth: '20px'}}>{account.date}</td>
-                                <td style={{ minwidth: '100px'}}>{account.name}</td>
-                                <td style={{ minwidth: '150px'}}>{account.facebook}</td>
-                                <td style={{ minwidth: '150px'}}>{account.phonenumber}</td>
-                                <td style={{ minwidth: '150px'}}>{account.phonenumber}</td>
-                                <td style={{ minwidth: '150px'}}>{account.status}</td>
-                                <td style={{ minwidth: '70px', textAlign: 'center'}}>
+                                <td style={{ minwidth: '20px' }}>{account.date}</td>
+                                <td style={{ minwidth: '100px' }}>{account.name}</td>
+                                <td style={{ minwidth: '150px' }}>{account.facebook}</td>
+                                <td style={{ minwidth: '150px' }}>{account.phonenumber}</td>
+                                <td style={{ minwidth: '150px' }}>{account.phonenumber}</td>
+                                <td style={{ minwidth: '150px' }}>{account.status}</td>
+                                <td style={{ minwidth: '70px', textAlign: 'center' }}>
                                     <button className="delete-button" onClick={() => deleteAccount(account.id)}>
                                         Delete
                                     </button>
@@ -97,3 +116,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
+

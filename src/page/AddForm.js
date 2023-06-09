@@ -51,19 +51,12 @@ export default function AddForm({ sale, setsale }) {
             <form onSubmit={saveSale}>
                 <label>ชื่อเซลล์</label>
                 <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} />
-
-                {/* <label>วันที่</label>
-                <DatePicker selected={date} onChange={(date) => setDate(date)} /> */}
-
                 <label>Facebook</label>
                 <input type="text" name="facebook" value={facebook} onChange={(e) => setFacebook(e.target.value)} />
-
                 <label>เบอร์โทรศัพท์</label>
                 <input type="text" name="phoneNumber" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
-
                 <label>สถานะ</label>
                 <input type="text" name="status" value={status} onChange={(e) => setStatus(e.target.value)} />
-
                 <button type="submit" className="btn-add">บันทึก</button>
             </form>
         </section>

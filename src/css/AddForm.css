@@ -21,23 +21,22 @@ form {
 }
 
 label {
-  margin-bottom: 10px;
-  font-weight: bold;
+  margin-bottom: 1px;
 }
 
 input[type="text"] {
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border: 1px solid #dddddd;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .btn-add {
   padding: 10px 20px;
-  background-color: #0066cc;
+  background-color: #5caeff;
   color: #ffffff;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
