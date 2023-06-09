@@ -1,13 +1,13 @@
 .homepage {
   display: grid;
-  grid-template-columns: 0.4fr 1fr;
+  grid-template-columns: 0.3fr 1fr;
   grid-gap: 0px;
 }
 
 .add-form-container {
   background-color: #f5f5f5;
-  padding: 20px;
-  height: 400px; /* กำหนดความสูงของ div เท่ากับความสูงของหน้าจอ */
+  margin: 0px;
+  height: 100vh; /* กำหนดความสูงของ div เท่ากับความสูงของหน้าจอ */
   /* display: flex; */
   align-items: center; /* แนวตั้งตรงกลาง */
   justify-content: center; /* แนวนอนตรงกลาง */
