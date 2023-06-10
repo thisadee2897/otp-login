@@ -42,3 +42,44 @@
 .otp-submit-btn:hover {
   background-color: #0056b3;
 }
+.phone-number-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 300px;
+  background: white;
+}
+
+.phone-number-form-input {
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  font-size: 24px;
+  border: 1px solid #6a87fe;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.phone-number-form button {
+  width: 100%;
+  height: 40px;
+  background-color: #007bff;
+  color: #ffffff;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.phone-number-form button:hover {
+  background-color: #0056b3;
+}
+
+.phone-number-form button:disabled {
+  background-color: #ffffff;
+  cursor: not-allowed;
+}
